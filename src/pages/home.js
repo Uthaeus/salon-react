@@ -3,7 +3,7 @@
 function HomePage() {
 
     return (
-        <h1>Home</h1>
+        <button className="btn btn-primary">Push</button>
     );
 }
 
