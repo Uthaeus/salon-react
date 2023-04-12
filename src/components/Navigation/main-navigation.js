@@ -1,5 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 
+import logo from '../../assets/images/asl_logo.jpg';
+
 function MainNavigation() {
 
     return (
@@ -7,7 +9,7 @@ function MainNavigation() {
             <div className=" nav-container">
 
                 <div className='container d-flex justify-content-evenly align-items-center'>
-                    <img src='../../assets/images/asl_logo.jpg' alt='logo' width='20' height='20' />
+                    <img src={logo} alt='logo' width='20' height='20' />
                     <NavLink to='/' end className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
                     <NavLink to='about' className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink>
                     <NavLink to='contact' className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink>
