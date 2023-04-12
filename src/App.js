@@ -18,6 +18,8 @@ import { AuthContext } from "./store/auth-context";
 import ProductRoot from "./pages/product-root";
 import ProductsPage from "./components/Products/products";
 import ProductShow from "./components/Products/product-show";
+import { ProductContext } from "./store/product-context";
+import { PRODUCTS } from "./store/DUMMY_DATA";
 
 const router = createBrowserRouter([
   {
@@ -90,10 +92,14 @@ const router = createBrowserRouter([
 
 function App() {
   const authCtx = useContext(AuthContext);
+  const prodCtx = useContext(ProductContext);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
       authCtx.login();
+    }
+    if (prodCtx.products.length < 1) {
+      prodCtx.initializeProducts(PRODUCTS);
     }
   }, [])
 

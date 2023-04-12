@@ -1,9 +1,12 @@
 
 
-function ProductShow() {
+function ProductShow({params}) {
 
     return (
-        <h1>show</h1>
+        <>
+            <h1>show</h1>
+            <h1>{params}</h1>
+        </>
     );
 }
 

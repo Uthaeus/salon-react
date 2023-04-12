@@ -8,10 +8,13 @@ import ReactDOM from 'react-dom/client';
 import '../src/styles/main.scss';
 import App from './App';
 import AuthContextProvider from './store/auth-context';
+import ProductContextProvider from './store/product-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <AuthContextProvider>
-        <App />
+        <ProductContextProvider>
+            <App />
+        </ProductContextProvider>
     </AuthContextProvider>
 );

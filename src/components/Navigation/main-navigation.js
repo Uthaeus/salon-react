@@ -183,6 +183,15 @@ function MainNavigation() {
         </div>
 
         <div className="d-flex align-items-center justify-content-end">
+        <NavLink
+          to="/products"
+          className={({ isActive }) =>
+            isActive ? "nav-link mx-2 active" : "nav-link mx-2"
+          }
+        >
+          Products 
+        </NavLink>
+
           {loggedIn ? (
             <>
               <NavLink

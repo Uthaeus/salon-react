@@ -8,7 +8,7 @@ function RootLayout() {
     return (
         <div className="root-container">
             <MainNavigation />
-            <div class='container'>
+            <div className='container'>
                 <Outlet />
             </div>
             <div className="logo-wrapper">

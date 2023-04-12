@@ -1,9 +1,13 @@
+import ProductList from "./product-list";
 
 
 function ProductsPage() {
 
     return (
-        <h1>products</h1>
+        <div>
+            <h1>Products Index</h1>
+            <ProductList />
+        </div>
     );
 }
 
