@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import RootLayout from "./pages/root";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
@@ -10,6 +11,8 @@ import FaqsPage from "./pages/faqs";
 import SignUp from "./components/Authentication/sign-up";
 import Login from "./components/Authentication/login";
 import EditProfile from "./components/Authentication/edit-profile";
+import HairServices from "./pages/hair-services";
+import LashServices from "./pages/lash-services";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +37,7 @@ const router = createBrowserRouter([
         element: <LashcarePage />
       },
       {
-        path:'faqs',
+        path:'/faqs',
         element: <FaqsPage />
       },
       {
@@ -46,12 +49,20 @@ const router = createBrowserRouter([
         element: <SignUp />
       },
       {
-        path: 'login',
+        path: '/login',
         element: <Login />
       },
       {
-        path: 'edit-profile',
+        path: '/edit-profile',
         element: <EditProfile />
+      },
+      {
+        path: '/hair-services',
+        element: <HairServices />
+      },
+      {
+        path: '/lash-services',
+        element: <LashServices />
       }
     ]
   }
