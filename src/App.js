@@ -15,6 +15,9 @@ import EditProfile from "./components/Authentication/edit-profile";
 import HairServices from "./pages/hair-services";
 import LashServices from "./pages/lash-services";
 import { AuthContext } from "./store/auth-context";
+import ProductRoot from "./pages/product-root";
+import ProductsPage from "./components/Products/products";
+import ProductShow from "./components/Products/product-show";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +68,21 @@ const router = createBrowserRouter([
       {
         path: '/lash-services',
         element: <LashServices />
+      }
+    ]
+  },
+  {
+    path: '/products',
+    element: <ProductRoot />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <ProductsPage />
+      },
+      {
+        path: 'products/:id',
+        element: <ProductShow />
       }
     ]
   }
