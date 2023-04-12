@@ -1,0 +1,10 @@
+
+.nav-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    .active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}

@@ -7,6 +7,9 @@ import LashcarePage from "./pages/lashcare";
 import AppointmentsPage from "./pages/appointments";
 import ErrorPage from "./pages/error";
 import FaqsPage from "./pages/faqs";
+import SignUp from "./components/Authentication/sign-up";
+import Login from "./components/Authentication/login";
+import EditProfile from "./components/Authentication/edit-profile";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +43,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/sign-up',
+        element: <SignUp />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'edit-profile',
+        element: <EditProfile />
       }
     ]
   }
