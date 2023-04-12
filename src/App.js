@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import RootLayout from "./pages/root";
@@ -13,6 +14,7 @@ import Login from "./components/Authentication/login";
 import EditProfile from "./components/Authentication/edit-profile";
 import HairServices from "./pages/hair-services";
 import LashServices from "./pages/lash-services";
+import { AuthContext } from "./store/auth-context";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const authCtx = useContext(AuthContext);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      authCtx.login();
+    }
+  }, [])
+
   return <RouterProvider router={router} />
 }
 
