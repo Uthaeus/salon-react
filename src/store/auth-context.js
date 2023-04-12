@@ -4,7 +4,9 @@ export const AuthContext = {
 
     login: () => {},
     logout: () => {},
-    isLoggedIn: false
+    isLoggedIn: false,
+    userEmail: 'test@test.com',
+    userPassword: 'foobar'
 }
 
 function AuthContextProvider({children}) {
