@@ -1,8 +1,17 @@
-import { NavLink, Link } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 import logo from '../../assets/images/asl_logo.jpg';
+import { AuthContext } from "../../store/auth-context";
 
 function MainNavigation() {
+    const authCtx = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    function logoutHandler() {
+        authCtx.logout();
+        navigate('/');
+    }
 
     return (
         <header className="py-3 mb-3 border-bottom">
@@ -50,8 +59,18 @@ function MainNavigation() {
                 </div>
 
             <div className="d-flex align-items-center justify-content-end">
-                <NavLink to='login' className={({isActive}) => isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}>Log In</NavLink>
-                <NavLink to='sign-up' className={({isActive}) => isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}>Sign Up</NavLink>
+                {authCtx.isLoggedIn ? (
+                    <>
+                        <NavLink to='edit-profile' className={({isActive}) => isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}>Edit Profile</NavLink>
+                        <Link onClick={logoutHandler} className='nav-link mx-2'>Logout</Link>
+                    </>
+                ):(
+                    <>
+                        <NavLink to='login' className={({isActive}) => isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}>Log In</NavLink>
+                        <NavLink to='sign-up' className={({isActive}) => isActive ? 'nav-link mx-2 active' : 'nav-link mx-2'}>Sign Up</NavLink>
+                    </>
+                )}
+                
 
                 <Link to='about' className="mx-5 nav-link">aslsalon@gmail.com</Link>
             </div>
