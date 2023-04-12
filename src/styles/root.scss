@@ -1,0 +1,18 @@
+.root-container {
+    min-width: 100%;
+    min-height: 100vh;
+    background: url('../assets/images/flower_background.jpeg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .logo-wrapper {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0.4;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+}

@@ -13,19 +13,6 @@ function FullForm() {
   const [notice, setNotice] = useState("");
   const [state, setState] = useState(initialState);
 
-  const emailIsValid = state.email.includes("@") && state.email.length > 6;
-  const firstNameIsValid = state.first_name !== "";
-  const lastNameIsValid = state.last_name !== "";
-  const phoneIsValid = state.phone.length >= 10;
-  const passwordIsValid =
-    state.password.length >= 6 && state.password === state.confirm_password;
-
-  const formIsValid =
-    emailIsValid &&
-    firstNameIsValid &&
-    lastNameIsValid &&
-    phoneIsValid &&
-    passwordIsValid;
 
   function noticeCheckHandler() {
     if (notice !== "") {
@@ -38,15 +25,31 @@ function FullForm() {
   }
 
   function inputChangeHandler(e) {
-    setState((prev) => (prev[e.target] = e.target.value));
+    setState({
+        ...state,
+        [e.target.id]: e.target.value
+    });
   }
 
   function submitHandler(e) {
     e.preventDefault();
 
+    const emailIsValid = state.email.length > 6 && state.email.includes("@");
+    const firstNameIsValid = state.first_name !== "";
+    const lastNameIsValid = state.last_name !== "";
+    const phoneIsValid = state.phone.length >= 10;
+    const passwordIsValid =
+        state.password.length >= 6 && state.password === state.confirm_password;
+
+    const formIsValid =
+        emailIsValid &&
+        firstNameIsValid &&
+        lastNameIsValid &&
+        phoneIsValid &&
+        passwordIsValid;
+
     if (formIsValid) {
 
-        console.log(state);
     } else {
         setNotice('Invalid input');
         clearForm();
@@ -63,6 +66,7 @@ function FullForm() {
           type="email"
           id="email"
           className="form-control"
+
           value={state.email}
           onFocus={noticeCheckHandler}
           onChange={inputChangeHandler}
