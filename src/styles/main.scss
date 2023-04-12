@@ -1,3 +1,11 @@
 @import 'bootstrap';
 
 @import './main-navigation.scss';
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    background: url('../assets/images/flower_background.jpeg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
