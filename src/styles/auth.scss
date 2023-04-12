@@ -1,0 +1,23 @@
+
+.login-container {
+    width: 80%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.short-form-wrapper {
+    input {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        color: #161616;
+        font-size: 1.1em;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
+

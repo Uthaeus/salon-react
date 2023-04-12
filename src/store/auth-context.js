@@ -1,13 +1,13 @@
-import { useState } from "react"
+import React, {useState} from "react"; 
 
-export const AuthContext = {
+export const AuthContext = React.createContext({
 
     login: () => {},
     logout: () => {},
     isLoggedIn: false,
-    userEmail: 'test@test.com',
-    userPassword: 'foobar'
-}
+    userEmail: '',
+    userPassword: ''
+});
 
 function AuthContextProvider({children}) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +24,9 @@ function AuthContextProvider({children}) {
     const value = {
         login: login,
         logout: logout,
-        isLoggedIn: isLoggedIn
+        isLoggedIn: isLoggedIn,
+        userEmail: "test@test.com",
+        userPassword: "foobar"
     }
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
