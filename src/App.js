@@ -6,6 +6,7 @@ import ContactPage from "./pages/contact";
 import LashcarePage from "./pages/lashcare";
 import AppointmentsPage from "./pages/appointments";
 import ErrorPage from "./pages/error";
+import FaqsPage from "./pages/faqs";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,15 @@ const router = createBrowserRouter([
         element: <LashcarePage />
       },
       {
+        path:'faqs',
+        element: <FaqsPage />
+      },
+      {
         path: '/appointments',
         element: <AppointmentsPage />
+      },
+      {
+        path: '/sign-up',
       }
     ]
   }
